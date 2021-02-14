@@ -52,6 +52,10 @@ export default {
 
   webfontloader: {
     events: false,
+    custom: {
+      families: ['Theater'],
+      urls: ['@/assets/fonts/_fonts.scss'],
+    },
     google: {
       families: ['PT+Sans:400,700:cyrillic&display=swap'],
     },
@@ -76,12 +80,12 @@ export default {
     //     pushAssets: (req, res, publicPath, preloadFiles) => preloadFiles
     //     .map(f => `<${publicPath}${f.file}>; rel=preload; as=${f.asType}`)
     //   },
-    compressor: true,
+    // compressor: true,
     resourceHints: false,
-    etag: false,
-    static: {
-      etag: true,
-    },
+    // etag: false,
+    // static: {
+    //   etag: true,
+    // },
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

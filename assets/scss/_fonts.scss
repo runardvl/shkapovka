@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'Theater';
+  src: url('~assets/fonts/Theater-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+h1, h2, h3, h4, h5, h6, a, span, ul, li, button, div, form, input, textarea {
+  font-family: 'PT Sans', sans-serif;
+  font-style: normal;
+}
+h1,h2,h3,h4,h5,h6,p {
+  margin: 0;
+  padding: 0;
+}
+@mixin headings {
+  font-family: 'Theater', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+@mixin text {
+  font-family: 'PT Sans', sans-serif;
+  font-style: normal;
+}
+@mixin heading1 {
+  font-size: 40px;
+  line-height: 48px;
+  @include headings;
+  @media (width > 960px) {
+    font-size: 64px;
+    line-height: 68px;
+  }
+}
+@mixin heading2 {
+  font-size: 40px;
+  line-height: 48px;
+  @include headings;
+  @media (width > 960px) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+@mixin caption {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+  @include text;
+}
+@mixin body1 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  @include text;
+}
+@mixin body2 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  @include text;
+}

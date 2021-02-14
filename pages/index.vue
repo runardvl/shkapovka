@@ -2,7 +2,8 @@
   <div class="container">
     <div>
       <Logo />
-      <h1 class="title">shkpvk</h1>
+      <h1 class="title">Кастомный шрифт</h1>
+      <p class="subtitle-s">Гугл шрифт</p>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -26,10 +27,19 @@
 </template>
 
 <script>
-export default {}
+import Logo from '@/components/Logo'
+export default {
+  components: {
+    Logo,
+  },
+}
 </script>
 
-<style>
+<style lang="scss">
+.subtitle-s {
+  padding-bottom: 15px;
+  @include body2;
+}
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -40,21 +50,10 @@ export default {}
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Theater', 'PT Sans', sans-serif;
   display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+  margin-top: 15px;
+  @include heading1;
 }
 
 .links {
