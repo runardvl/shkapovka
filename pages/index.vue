@@ -1,11 +1,13 @@
 <template>
   <div class="main-page">
-    <h1>Some</h1>
+    <heroSection />
   </div>
 </template>
 
 <script>
+import heroSection from '@/components/sections/heroSection'
+
 export default {
-  components: {},
+  components: { heroSection },
 }
 </script>

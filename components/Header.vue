@@ -1,8 +1,10 @@
 <template>
-  <header class="header">
-    <ShkpvkLogo />
-    <Navigation class="nav" />
-  </header>
+  <div class="container">
+    <header class="header">
+      <ShkpvkLogo />
+      <Navigation class="nav" />
+    </header>
+  </div>
 </template>
 
 <script>

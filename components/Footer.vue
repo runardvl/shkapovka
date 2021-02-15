@@ -1,8 +1,10 @@
 <template>
-  <footer class="footer">
-    <ShkpvkLogo />
-    <Navigation class="nav" />
-  </footer>
+  <div class="container">
+    <footer class="footer">
+      <ShkpvkLogo />
+      <Navigation class="nav" />
+    </footer>
+  </div>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="default container">
+  <div class="default">
     <Header />
     <Nuxt />
     <Footer />
