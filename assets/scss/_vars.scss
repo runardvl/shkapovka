@@ -4,3 +4,18 @@ $white: #fff;
 $buttonDefault: #7D4A48;
 $yellow: #C1A063;
 $green: #52614D;
+$greyBg: #F5F4F3;
+
+// Margins & Paddings
+$gridPaddingDesktop: 0 128px;
+$gridPaddingMobile: 0 16px;
+
+// Mixins
+@mixin globalWrapper {
+  margin: 0 auto;
+  padding:  $gridPaddingMobile;
+  @media (width > 960px) {
+    max-width: 1280px;
+    padding: $gridPaddingDesktop;
+  }
+}

@@ -63,7 +63,7 @@ export default {
   },
   styleResources: {
     // your settings here
-    scss: ['./assets/scss/*.scss'], // alternative: scss
+    scss: ['@/assets/scss/*.scss'], // alternative: scss
     less: [],
     stylus: [],
   },
