@@ -43,7 +43,6 @@ export default {
 
 <style lang="scss">
 .default {
-  background: $greyBg;
   display: grid;
   height: 100vh;
   grid-template-rows: auto 1fr auto;

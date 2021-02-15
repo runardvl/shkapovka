@@ -23,6 +23,7 @@ export default {
 <style lang="scss">
 .footer {
   display: grid;
+  margin-top: 32px;
   margin-bottom: 16px;
   .nav {
     padding-top: 16px;

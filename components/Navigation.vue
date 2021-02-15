@@ -39,7 +39,7 @@ export default {
 }
 .nav__item {
   list-style: none;
-  color: $textDark;
+  color: $darkText;
   @include body2;
 }
 </style>

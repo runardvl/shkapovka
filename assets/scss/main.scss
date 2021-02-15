@@ -1,3 +1,20 @@
+body {
+  background-color: $greyBg;
+}
 .container {
  @include globalWrapper;
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 19px 72px;
+  width: 256px;
+  height: 64px;
+  background: $brownButtonDefault;
+  border: none;
+  color: $white;
+  @include caption;
 }
