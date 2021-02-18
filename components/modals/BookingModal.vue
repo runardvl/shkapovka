@@ -32,7 +32,7 @@
             <label class="booking-modal__form-label">
               Телефон
               <input
-                class="booking-modal__form-input"
+                class="booking-modal__form-input v-input"
                 type="tel"
                 placeholder="+7 (123) 456-78-90"
                 required
@@ -82,9 +82,17 @@ export default {
   &__form {
     display: grid;
     justify-content: center;
+    grid-gap: 16px;
+    margin-top: 32px;
+  }
+  &__form-input {
+    margin-top: 4px;
   }
   &__form-label {
     display: grid;
+  }
+  &__submit {
+    margin-top: 16px;
   }
 }
 .vm--overlay {
