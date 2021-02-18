@@ -1,5 +1,7 @@
 <template>
-  <shkapovkaLogo class="ShkpvkLogo" />
+  <nuxt-link class="ShkpvkLogo" to="/" no-prefetch>
+    <shkapovkaLogo class="ShkpvkLogo__svg" />
+  </nuxt-link>
 </template>
 
 <script>
@@ -16,6 +18,8 @@ export default {
 .ShkpvkLogo {
   animation: 1s appear;
   margin: auto;
+  display: grid;
+  justify-content: center;
 }
 
 @keyframes appear {

@@ -24,6 +24,7 @@ export default {
 .header {
   display: grid;
   padding-top: 24px;
+  justify-content: center;
   .nav {
     padding-top: 16px;
   }

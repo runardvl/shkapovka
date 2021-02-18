@@ -2,7 +2,12 @@
   <nav class="nav">
     <ul class="nav__list">
       <li v-for="item in menuItems" :key="item.link" class="nav__item">
-        {{ item.title }}
+        <nuxt-link
+          class="nav__item-link"
+          :to="`/${item.link}`"
+          :prefetch="false"
+          >{{ item.title }}</nuxt-link
+        >
       </li>
     </ul>
   </nav>
@@ -32,14 +37,22 @@ export default {
   grid-auto-flow: column;
   grid-template-columns: repeat(4, max-content);
   justify-content: center;
-  grid-gap: 24px;
+  grid-gap: 20px;
   @media (width > 960px) {
     grid-gap: 32px;
   }
 }
 .nav__item {
-  list-style: none;
-  color: $darkText;
-  @include body2;
+  &-link {
+    text-decoration: none;
+    list-style: none;
+    color: $darkText;
+    transition: $mainTransition;
+    @include body2;
+    &:hover,
+    &:focus {
+      color: $brownButtonDefault;
+    }
+  }
 }
 </style>

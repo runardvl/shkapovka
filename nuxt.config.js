@@ -32,13 +32,17 @@ export default {
   css: ['@/assets/scss/main.scss'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['@/plugins/vee-validate'],
+  plugins: [
+    '@/plugins/vee-validate',
+    '@/plugins/vue-screen',
+    { src: '@/plugins/vue-js-modal.js', mode: 'client' },
+  ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
 
   loading: {
-    color: '#5024C6',
+    color: '#7D4A48',
     height: '5px',
   },
 

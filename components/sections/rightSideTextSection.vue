@@ -3,20 +3,17 @@
     <section class="rs-section">
       <!-- offer block-->
       <div class="rs-section__offer">
-        <h2 class="rs-section__title">
-          Проведение мероприятий и регистрация браков
-        </h2>
+        <h2 class="rs-section__title">{{ title }}</h2>
         <p class="rs-section__subtitle">
-          Два больших зала на 40-60 человек, 3 домика, беседки, мангал,
-          деревянная баня
+          {{ subtitle }}
         </p>
-        <button class="btn rs-section__btn">Забронировать</button>
+        <button class="btn-filled rs-section__btn">{{ btnText }}</button>
       </div>
       <!-- image block-->
       <img
         class="rs-section__image"
-        :src="require(`~/assets/img/main-img_2.jpg`)"
-        alt="Центральный вход на базу отдыха Шкаповка"
+        :src="require(`~/assets/img/${sectionImage}.jpg`)"
+        :alt="imgAltText"
       />
     </section>
   </div>
@@ -25,6 +22,28 @@
 <script>
 export default {
   name: 'RightSideTextSection',
+  props: {
+    title: {
+      type: String,
+      default: '',
+    },
+    subtitle: {
+      type: String,
+      default: '',
+    },
+    btnText: {
+      type: String,
+      default: '',
+    },
+    sectionImage: {
+      type: String,
+      default: '',
+    },
+    imgAltText: {
+      type: String,
+      default: '',
+    },
+  },
 }
 </script>
 
@@ -34,9 +53,11 @@ export default {
   justify-content: space-between;
   grid-auto-flow: row;
   margin-top: 64px;
+  margin-bottom: 64px;
   @media (width > 960px) {
     grid-auto-flow: column;
     margin-top: 128px;
+    margin-bottom: 128px;
   }
   &__offer {
     max-width: 407px;

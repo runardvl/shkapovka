@@ -1,5 +1,6 @@
 // Color
 $brownButtonDefault: #7D4A48;
+$brownButtonActive:  #965956;
 $darkText: #1B1B1B;
 $green: #52614D;
 $greyBg: #F5F4F3;
@@ -11,6 +12,9 @@ $yellow: #C1A063;
 // Margins & Paddings
 $gridPaddingDesktop: 0 128px;
 $gridPaddingMobile: 0 16px;
+
+// Transitions
+$mainTransition: 0.4s cubic-bezier(0.79,0.14,0.15,0.86);
 
 // Mixins
 @mixin globalWrapper {

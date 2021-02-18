@@ -5,16 +5,87 @@ body {
  @include globalWrapper;
 }
 
-.btn {
+// Buttons
+button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+@mixin btn{
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 19px 72px;
+  padding: 19px 0;
   width: 256px;
   height: 64px;
-  background: $brownButtonDefault;
-  border: none;
-  color: $white;
+  min-width: 256px;
+  transition: $mainTransition;
   @include caption;
+}
+
+.btn-filled {
+  border: none;
+  background-color: $brownButtonDefault;
+  color: $white;
+  @include btn;
+  &:hover {
+    background-color: $brownButtonActive;
+  }
+  &:focus {
+    outline: none;
+    background-color: $brownButtonActive;
+  }
+  &--disabled {
+    background-color: $greyInputDefault;
+    &:hover, &:focus, &:active {
+      background-color: $greyInputDefault;
+    }
+  }
+}
+
+.btn-outlined {
+  border: solid $brownButtonDefault 2px;
+  background-color: transparent;
+  color: $brownButtonDefault;
+  @include btn;
+  &:hover {
+    border: solid $brownButtonActive 2px;
+    color: $brownButtonActive;
+  }
+  &:focus {
+    outline: none;
+    border: solid $brownButtonActive 2px;
+    color: $brownButtonActive;
+  }
+  &--disabled {
+    border: solid $greyInputDefault 2px;
+    color: $greyInputDefault;
+    &:hover, &:focus, &:active {
+      border: solid $greyInputDefault 2px;
+      color: $greyInputDefault;
+    }
+  }
+}
+
+// Links
+a.nuxt-link-exact-active {
+  color: $brownButtonDefault;
+}
+
+// Form elements
+// inputs
+.v-input {
+  width: 256px;
+  height: 48px;
+  padding: 16px 11px;
+  border: 1px solid $darkText;
+  color: $darkText;
+  @include body1;
+  &::placeholder {
+    color: $greyInputDefault;
+  }
+  &:focus {
+    outline: none;
+  }
 }

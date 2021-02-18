@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <footer class="footer">
-      <ShkpvkLogo />
       <Navigation class="nav" />
+      <ShkpvkLogo />
     </footer>
   </div>
 </template>
@@ -23,10 +23,13 @@ export default {
 <style lang="scss">
 .footer {
   display: grid;
-  margin-top: 32px;
+  grid-gap: 16px;
+  margin-top: 64px;
   margin-bottom: 16px;
-  .nav {
-    padding-top: 16px;
+  @media (width > 960px) {
+    margin-top: 128px;
+    margin-bottom: 48px;
+    grid-gap: 24px;
   }
 }
 </style>

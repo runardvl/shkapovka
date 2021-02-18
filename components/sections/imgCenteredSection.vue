@@ -14,7 +14,7 @@
           У нас такие-то, такие-то и такие-то животные, с которыми можно
           познакомиться
         </p>
-        <button class="btn ic-section__btn">Забронировать</button>
+        <button class="btn-filled ic-section__btn">Забронировать</button>
       </div>
     </div>
   </section>
