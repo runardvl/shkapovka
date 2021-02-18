@@ -132,7 +132,12 @@ export default {
         ignoreOrder: true,
       },
     }),
-    transpile: ['vee-validate', 'vue-lazy-hydration', 'intersection-observer'],
+    transpile: [
+      'vee-validate',
+      'vue-lazy-hydration',
+      'intersection-observer',
+      'vee-validate/dist/rules',
+    ],
     postcss: {
       plugins: {
         ...(!isDev && {

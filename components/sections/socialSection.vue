@@ -16,9 +16,9 @@
         </div>
       </div>
       <div class="soc-section__buttons">
-        <button class="btn-filled soc-section__btn">
+        <nuxt-link to="/contacts" class="btn-filled soc-section__btn">
           {{ firstBtnText }}
-        </button>
+        </nuxt-link>
         <client-only>
           <button
             class="btn-outlined soc-section__btn"

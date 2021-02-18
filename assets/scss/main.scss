@@ -9,6 +9,10 @@ body {
 button:disabled {
   cursor: not-allowed;
   pointer-events: all !important;
+  background-color: $greyInputDefault;
+  &:hover, &:focus, &:active {
+    background-color: $greyInputDefault;
+  }
 }
 @mixin btn{
   cursor: pointer;
@@ -20,6 +24,7 @@ button:disabled {
   width: 256px;
   height: 64px;
   min-width: 256px;
+  text-decoration: none;
   transition: $mainTransition;
   @include caption;
 }
@@ -36,12 +41,12 @@ button:disabled {
     outline: none;
     background-color: $brownButtonActive;
   }
-  &--disabled {
-    background-color: $greyInputDefault;
-    &:hover, &:focus, &:active {
-      background-color: $greyInputDefault;
-    }
-  }
+  //&--disabled {
+  //  background-color: $greyInputDefault;
+  //  &:hover, &:focus, &:active {
+  //    background-color: $greyInputDefault;
+  //  }
+  //}
 }
 
 .btn-outlined {

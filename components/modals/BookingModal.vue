@@ -6,8 +6,8 @@
         :adaptive="true"
         :pivot-y="0.5"
         :max-width="496"
-        :height="'auto'"
         :width="'95%'"
+        height="auto"
         :reset="true"
         classes="booking-modal"
         :scrollable="true"
@@ -18,39 +18,17 @@
             Мы свяжемся с вами в рабочее время
           </p>
         </header>
-        <main class="booking-modal__content">
-          <form class="booking-modal__form" action="">
-            <label class="booking-modal__form-label">
-              Имя
-              <input
-                class="booking-modal__form-input v-input"
-                type="text"
-                placeholder="Имя"
-                required
-              />
-            </label>
-            <label class="booking-modal__form-label">
-              Телефон
-              <input
-                class="booking-modal__form-input v-input"
-                type="tel"
-                placeholder="+7 (123) 456-78-90"
-                required
-              />
-            </label>
-            <button class="btn-filled booking-modal__submit">
-              Забронировать
-            </button>
-          </form>
-        </main>
+        <BookingForm button-text="Забронировать" />
       </modal>
     </client-only>
   </div>
 </template>
 
 <script>
+import BookingForm from '@/components/forms/BookingForm'
 export default {
   name: 'BookingModal',
+  components: { BookingForm },
   watch: {
     $route() {
       this.$modal.hide('bookingModal')
@@ -78,21 +56,6 @@ export default {
   &__content {
     display: grid;
     justify-content: center;
-  }
-  &__form {
-    display: grid;
-    justify-content: center;
-    grid-gap: 16px;
-    margin-top: 32px;
-  }
-  &__form-input {
-    margin-top: 4px;
-  }
-  &__form-label {
-    display: grid;
-  }
-  &__submit {
-    margin-top: 16px;
   }
 }
 .vm--overlay {

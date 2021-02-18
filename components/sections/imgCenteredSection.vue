@@ -14,7 +14,12 @@
           У нас такие-то, такие-то и такие-то животные, с которыми можно
           познакомиться
         </p>
-        <button class="btn-filled ic-section__btn">Забронировать</button>
+        <button
+          class="btn-filled ic-section__btn"
+          @click.prevent="onClickHandler"
+        >
+          Забронировать
+        </button>
       </div>
     </div>
   </section>
@@ -23,6 +28,11 @@
 <script>
 export default {
   name: 'ImgCenteredSection',
+  methods: {
+    onClickHandler() {
+      this.$modal.show('bookingModal')
+    },
+  },
 }
 </script>
 

@@ -7,7 +7,12 @@
         <p class="rs-section__subtitle">
           {{ subtitle }}
         </p>
-        <button class="btn-filled rs-section__btn">{{ btnText }}</button>
+        <button
+          class="btn-filled rs-section__btn"
+          @click.prevent="onClickHandler"
+        >
+          {{ btnText }}
+        </button>
       </div>
       <!-- image block-->
       <img
@@ -42,6 +47,11 @@ export default {
     imgAltText: {
       type: String,
       default: '',
+    },
+  },
+  methods: {
+    onClickHandler() {
+      this.$modal.show('bookingModal')
     },
   },
 }
