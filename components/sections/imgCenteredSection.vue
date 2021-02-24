@@ -15,7 +15,7 @@
           познакомиться
         </p>
         <button
-          class="btn-filled ic-section__btn"
+          class="btn--filled ic-section__btn"
           @click.prevent="onClickHandler"
         >
           Забронировать
@@ -40,7 +40,7 @@ export default {
 .ic-section {
   display: block;
   background-color: $white;
-  margin-top: 64px;
+  //margin-top: 64px;
   padding: 64px 16px 64px 16px;
   position: static;
   @media (width > 960px) {

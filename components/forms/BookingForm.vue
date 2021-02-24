@@ -7,6 +7,7 @@
           v-slot="{ errors }"
           class="input-wrapper"
           name="Имя"
+          mode="lazy"
           rules="required|alpha"
         >
           <label class="booking-form__form-label">
@@ -26,6 +27,7 @@
           v-slot="{ errors }"
           class="input-wrapper"
           name="Телефон"
+          mode="lazy"
           :rules="{
             required: true,
             regex:
@@ -39,6 +41,7 @@
               id="phone"
               v-model="userInfo.phone"
               class="v-input booking-form__form-input"
+              :class="classObject"
               type="tel"
               placeholder="+7 (___) ___-__-__"
             />
@@ -46,7 +49,7 @@
         </ValidationProvider>
         <!--submit-->
         <button
-          class="btn-filled booking-form__submit"
+          class="btn--filled booking-form__submit"
           type="submit"
           :disabled="invalid"
         >
@@ -74,6 +77,13 @@ export default {
       phone: '',
     },
   }),
+  computed: {
+    classObject() {
+      return {
+        'v-input--error': this.error,
+      }
+    },
+  },
   methods: {
     submitForm() {},
   },

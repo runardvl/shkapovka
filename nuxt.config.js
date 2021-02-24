@@ -1,3 +1,4 @@
+// require('dotenv').config()
 const isDev = process.env.NODE_ENV !== 'production'
 
 export default {
@@ -35,7 +36,10 @@ export default {
   plugins: [
     '@/plugins/vee-validate',
     '@/plugins/vue-screen',
+    '@/plugins/silent-box',
     { src: '@/plugins/vue-js-modal.js', mode: 'client' },
+    { src: '@/plugins/vue-lazy-load.js' },
+    '@/plugins/fslightbox-vue',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -50,6 +54,7 @@ export default {
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
     '@nuxtjs/style-resources',
+    '@nuxtjs/dotenv',
   ],
 
   modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxt/content'],

@@ -16,25 +16,31 @@
         </div>
       </div>
       <div class="soc-section__buttons">
-        <nuxt-link to="/contacts" class="btn-filled soc-section__btn">
+        <nuxt-link to="/contacts" class="btn--filled soc-section__btn">
           {{ firstBtnText }}
         </nuxt-link>
         <client-only>
           <button
-            class="btn-outlined soc-section__btn"
+            class="btn--outlined soc-section__btn"
             @click.prevent="onClickHandler"
           >
             {{ secondBtnText }}
           </button>
         </client-only>
       </div>
+      <!--      <woodPattern class="soc-section__pattern" />-->
     </section>
   </div>
 </template>
 
 <script>
+// import woodPattern from '@/assets/svg/wood-pattern.svg?inline'
+
 export default {
   name: 'SocialSection',
+  components: {
+    // woodPattern,
+  },
   props: {
     title: {
       type: String,
@@ -63,25 +69,19 @@ export default {
 
 <style lang="scss">
 .soc-section {
+  position: relative;
   &__title {
     margin-top: 64px;
+    position: relative;
+    z-index: 1;
     @include heading2;
   }
   &__images {
-    margin-top: 32px;
-    display: grid;
-    grid-gap: 20px;
-    align-items: stretch;
-    grid-template-columns: repeat(2, minmax(auto, 1fr));
-    @media (width > 516px) {
-      grid-template-columns: repeat(auto-fill, minmax(135px, 232px));
-      grid-gap: 32px;
-    }
-  }
-  &__img {
-    max-width: 100%;
+    @include images-grid;
   }
   &__buttons {
+    position: relative;
+    z-index: 1;
     display: grid;
     margin-top: 32px;
     justify-content: center;
@@ -90,6 +90,12 @@ export default {
       grid-auto-flow: column;
       margin-top: 64px;
     }
+  }
+  &__pattern {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: rotate(180deg);
   }
 }
 </style>

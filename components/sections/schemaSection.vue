@@ -22,6 +22,8 @@ export default {
 .s-section {
   background: $white;
   padding: 64px 0;
+  position: relative;
+  z-index: 2;
   @media (width > 960px) {
     padding: 128px 0;
   }

@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
-    <footer class="footer">
-      <Navigation class="nav" />
-      <ShkpvkLogo />
-    </footer>
-  </div>
+  <footer class="footer">
+    <div class="container">
+      <Navigation class="footer__nav" />
+      <ShkpvkLogo class="footer__logo" />
+    </div>
+  </footer>
 </template>
 
 <script>
@@ -25,11 +25,19 @@ export default {
   display: grid;
   grid-gap: 16px;
   margin-top: 64px;
-  margin-bottom: 16px;
+  position: relative;
+  padding-bottom: 32px;
   @media (width > 960px) {
     margin-top: 128px;
-    margin-bottom: 48px;
+    padding-bottom: 48px;
     grid-gap: 24px;
+  }
+  &__logo {
+    position: relative;
+    margin-top: 24px;
+  }
+  &__nav {
+    position: relative;
   }
 }
 </style>

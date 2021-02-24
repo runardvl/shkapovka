@@ -8,7 +8,7 @@
           {{ subtitle }}
         </p>
         <button
-          class="btn-filled rs-section__btn"
+          class="btn--filled rs-section__btn"
           @click.prevent="onClickHandler"
         >
           {{ btnText }}

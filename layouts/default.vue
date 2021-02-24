@@ -1,7 +1,7 @@
 <template>
   <div class="default">
     <Header />
-    <Nuxt />
+    <Nuxt keep-alive />
     <Footer />
     <BookingModal />
   </div>
@@ -27,7 +27,14 @@ export default {
       ]
     },
   },
-
+  watch: {
+    async $route() {
+      if (this.$store.state.vkImages1280.length === 0) {
+        // eslint-disable-next-line no-console
+        await this.$store.dispatch('fetch')
+      }
+    },
+  },
   head() {
     const canonical = `https://shkapovka.ru${this.$route.path
       .toLowerCase()
@@ -48,5 +55,6 @@ export default {
   display: grid;
   height: 100vh;
   grid-template-rows: auto 1fr auto;
+  position: relative;
 }
 </style>

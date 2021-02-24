@@ -2,25 +2,31 @@
   <div class="main-page">
     <!--First Section-->
     <heroSection />
-    <bulletsSection />
-    <!--Second Section-->
-    <rightSideTextSection
-      :title="secondBlock.title"
-      :subtitle="secondBlock.subtitle"
-      :btn-text="secondBlock.btnText"
-      :section-image="secondBlock.sectionImage"
-      :img-alt-text="secondBlock.imgAltText"
-    />
+    <div class="first-pattern-group">
+      <woodPattern class="first-pattern-group__svg pattern" />
+      <bulletsSection />
+      <!--Second Section-->
+      <rightSideTextSection
+        :title="secondBlock.title"
+        :subtitle="secondBlock.subtitle"
+        :btn-text="secondBlock.btnText"
+        :section-image="secondBlock.sectionImage"
+        :img-alt-text="secondBlock.imgAltText"
+      />
+    </div>
     <!--Third Section-->
     <imgCenteredSection />
     <!--Forth Section-->
-    <rightSideTextSection
-      :title="forthBlock.title"
-      :subtitle="forthBlock.subtitle"
-      :btn-text="forthBlock.btnText"
-      :section-image="forthBlock.sectionImage"
-      :img-alt-text="forthBlock.imgAltText"
-    />
+    <div class="second-pattern-group">
+      <woodPattern class="second-pattern-group__svg pattern" />
+      <rightSideTextSection
+        :title="forthBlock.title"
+        :subtitle="forthBlock.subtitle"
+        :btn-text="forthBlock.btnText"
+        :section-image="forthBlock.sectionImage"
+        :img-alt-text="forthBlock.imgAltText"
+      />
+    </div>
     <!--Fifth Section-->
     <schemaSection />
     <!--Sixth Section-->
@@ -30,6 +36,9 @@
       :first-btn-text="socialSection.firstBtnText"
       :second-btn-text="socialSection.secondBtnText"
     />
+    <div class="last-pattern-group">
+      <woodPattern class="pattern last-pattern-group__svg" />
+    </div>
   </div>
 </template>
 
@@ -40,6 +49,7 @@ import rightSideTextSection from '@/components/sections/rightSideTextSection'
 import imgCenteredSection from '@/components/sections/imgCenteredSection'
 import schemaSection from '@/components/sections/schemaSection'
 import socialSection from '@/components/sections/socialSection'
+import woodPattern from '@/assets/svg/wood-pattern.svg?inline'
 
 export default {
   components: {
@@ -49,6 +59,7 @@ export default {
     imgCenteredSection,
     schemaSection,
     socialSection,
+    woodPattern,
   },
   data() {
     return {
@@ -87,3 +98,43 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.bullets {
+  z-index: 1;
+  position: relative;
+}
+.rs-section {
+  z-index: 1;
+  position: relative;
+}
+.first-pattern-group {
+  overflow: hidden;
+  position: relative;
+  &__svg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+}
+.second-pattern-group {
+  overflow: hidden;
+  position: relative;
+  &__svg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+}
+.last-pattern-group {
+  overflow: hidden;
+  position: relative;
+  &__svg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+}
+</style>

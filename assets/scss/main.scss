@@ -6,14 +6,6 @@ body {
 }
 
 // Buttons
-button:disabled {
-  cursor: not-allowed;
-  pointer-events: all !important;
-  background-color: $greyInputDefault;
-  &:hover, &:focus, &:active {
-    background-color: $greyInputDefault;
-  }
-}
 @mixin btn{
   cursor: pointer;
   display: flex;
@@ -29,7 +21,7 @@ button:disabled {
   @include caption;
 }
 
-.btn-filled {
+.btn--filled {
   border: none;
   background-color: $brownButtonDefault;
   color: $white;
@@ -41,15 +33,14 @@ button:disabled {
     outline: none;
     background-color: $brownButtonActive;
   }
-  //&--disabled {
-  //  background-color: $greyInputDefault;
-  //  &:hover, &:focus, &:active {
-  //    background-color: $greyInputDefault;
-  //  }
-  //}
+  &:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+    background-color: $greyInputDefault;
+  }
 }
 
-.btn-outlined {
+.btn--outlined {
   border: solid $brownButtonDefault 2px;
   background-color: transparent;
   color: $brownButtonDefault;
@@ -63,13 +54,28 @@ button:disabled {
     border: solid $brownButtonActive 2px;
     color: $brownButtonActive;
   }
-  &--disabled {
-    border: solid $greyInputDefault 2px;
+  &:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
     color: $greyInputDefault;
-    &:hover, &:focus, &:active {
-      border: solid $greyInputDefault 2px;
-      color: $greyInputDefault;
+    border: solid $greyInputDefault 2px;
+    &:hover {
+      background-color: transparent;
     }
+  }
+}
+
+.btn--close-modal {
+  cursor: pointer;
+  display: grid;
+  border: none;
+  background-color: transparent;
+  transition: fill $mainTransition;
+  & svg > path {
+    transition: $mainTransition;
+  }
+  &:hover svg > path {
+    fill: $brownButtonDefault;
   }
 }
 
@@ -92,5 +98,31 @@ a.nuxt-link-exact-active {
   }
   &:focus {
     outline: none;
+  }
+  &--error {
+    border: 1px solid $redError;
+  }
+}
+
+// SVGs
+.pattern {
+  pointer-events: none;
+}
+
+// Sections
+@mixin images-grid {
+  position: relative;
+  z-index: 1;
+  margin-top: 32px;
+  display: grid;
+  grid-gap: 20px;
+  align-items: stretch;
+  grid-template-columns: repeat(2, minmax(auto, 1fr));
+  @media (width > 516px) {
+    grid-template-columns: repeat(3, minmax(135px, 232px));
+  }
+  @media (width > 1016px) {
+    grid-template-columns: repeat(auto-fill, minmax(135px, 232px));
+    grid-gap: 32px;
   }
 }
