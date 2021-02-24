@@ -3,7 +3,10 @@
     <div class="container">
       <h1 class="rules-page__heading">Правила и полезная инфа</h1>
     </div>
-    <rulesSection />
+    <rulesSection
+      :first-btn-text="firstBtnText"
+      :second-btn-text="secondBtnText"
+    />
   </div>
 </template>
 
@@ -14,6 +17,12 @@ export default {
   name: 'Rules',
   components: {
     rulesSection,
+  },
+  data() {
+    return {
+      firstBtnText: 'Подписаться на нас',
+      secondBtnText: 'Связаться с нами',
+    }
   },
 }
 </script>

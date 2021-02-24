@@ -1,14 +1,18 @@
 <template>
   <div class="buttons-section container">
-    <nuxt-link to="/contacts" class="btn--filled gallery-page__btn">
-      Подписаться на нас
-    </nuxt-link>
+    <a
+      href="https://instagram.com/shkapovka_inst"
+      class="btn--filled gallery-page__btn"
+      target="_blank"
+    >
+      {{ firstBtnText }}
+    </a>
     <client-only>
       <button
         class="btn--outlined gallery-page__btn"
         @click.prevent="onClickHandler"
       >
-        Связаться с нами
+        {{ secondBtnText }}
       </button>
     </client-only>
   </div>
@@ -17,6 +21,16 @@
 <script>
 export default {
   name: 'ButtonsSection',
+  props: {
+    firstBtnText: {
+      type: String,
+      default: '',
+    },
+    secondBtnText: {
+      type: String,
+      default: '',
+    },
+  },
   methods: {
     onClickHandler() {
       this.$modal.show('bookingModal')

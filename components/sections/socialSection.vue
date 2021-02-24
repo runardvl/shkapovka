@@ -16,7 +16,10 @@
         </div>
       </div>
       <div class="soc-section__buttons">
-        <buttonsSection />
+        <buttonsSection
+          :first-btn-text="firstBtnText"
+          :second-btn-text="secondBtnText"
+        />
       </div>
     </section>
   </div>

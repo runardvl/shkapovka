@@ -46,7 +46,10 @@
         (заказчик) возмещает понесенные убытки базы.
       </p>
     </div>
-    <buttonsSection />
+    <buttonsSection
+      :first-btn-text="firstBtnText"
+      :second-btn-text="secondBtnText"
+    />
   </section>
 </template>
 
@@ -56,6 +59,16 @@ import buttonsSection from '@/components/sections/buttonsSection'
 export default {
   name: 'RulesSection',
   components: { buttonsSection },
+  props: {
+    firstBtnText: {
+      type: String,
+      default: '',
+    },
+    secondBtnText: {
+      type: String,
+      default: '',
+    },
+  },
 }
 </script>
 
