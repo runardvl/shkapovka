@@ -3,7 +3,7 @@
     <h2 class="vk-gallery__heading">{{ sectionHeading }}</h2>
     <div class="vk-gallery__images">
       <div
-        v-for="(img, index) in firstAlbum.items"
+        v-for="(img, index) in vkAlbum.items"
         :key="index"
         class="vk-gallery__img-wrapper"
         @click="openLightboxOnSlide(index + 1)"
@@ -31,7 +31,7 @@ export default {
       type: String,
       default: '',
     },
-    firstAlbum: {
+    vkAlbum: {
       type: Object,
       default: () => {},
     },
@@ -58,7 +58,11 @@ export default {
     @include heading2;
   }
   &__images {
+    margin-top: 16px;
     @include images-grid;
+    @media (width > 960px) {
+      margin-top: 48px;
+    }
   }
   &__img-wrapper {
     cursor: pointer;

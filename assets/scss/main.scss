@@ -113,7 +113,6 @@ a.nuxt-link-exact-active {
 @mixin images-grid {
   position: relative;
   z-index: 1;
-  margin-top: 32px;
   display: grid;
   grid-gap: 20px;
   align-items: stretch;

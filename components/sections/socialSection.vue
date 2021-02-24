@@ -16,29 +16,20 @@
         </div>
       </div>
       <div class="soc-section__buttons">
-        <nuxt-link to="/contacts" class="btn--filled soc-section__btn">
-          {{ firstBtnText }}
-        </nuxt-link>
-        <client-only>
-          <button
-            class="btn--outlined soc-section__btn"
-            @click.prevent="onClickHandler"
-          >
-            {{ secondBtnText }}
-          </button>
-        </client-only>
+        <buttonsSection />
       </div>
-      <!--      <woodPattern class="soc-section__pattern" />-->
     </section>
   </div>
 </template>
 
 <script>
+import buttonsSection from '@/components/sections/buttonsSection'
 // import woodPattern from '@/assets/svg/wood-pattern.svg?inline'
 
 export default {
   name: 'SocialSection',
   components: {
+    buttonsSection,
     // woodPattern,
   },
   props: {
@@ -77,7 +68,11 @@ export default {
     @include heading2;
   }
   &__images {
+    margin-top: 32px;
     @include images-grid;
+    @media (width > 960px) {
+      margin-top: 48px;
+    }
   }
   &__buttons {
     position: relative;
