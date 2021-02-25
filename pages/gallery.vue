@@ -16,7 +16,10 @@
       />
     </div>
     <div class="gallery-page__buttons">
-      <buttonsSection />
+      <buttonsSection
+        :first-btn-text="firstBtnText"
+        :second-btn-text="secondBtnText"
+      />
     </div>
   </div>
 </template>
@@ -37,11 +40,12 @@ export default {
       await store.dispatch('fetchAnimals')
     }
   },
-
   data() {
     return {
       firsSectionHeading: 'Территория базы отдыха',
       secondSectionHeading: 'Животные на базе',
+      firstBtnText: 'Подписаться на нас',
+      secondBtnText: 'Связаться с нами',
     }
   },
   computed: {

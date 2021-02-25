@@ -70,7 +70,6 @@ export default {
     padding-top: 32px;
     padding-bottom: 64px;
     @media (width > 960px) {
-      padding-top: 48px;
       padding-bottom: 128px;
       grid-gap: 32px;
     }

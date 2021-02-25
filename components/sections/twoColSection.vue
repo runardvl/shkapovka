@@ -59,7 +59,10 @@
       </div>
     </div>
     <div class="soc-section__buttons">
-      <buttonsSection />
+      <buttonsSection
+        :first-btn-text="firstBtnText"
+        :second-btn-text="secondBtnText"
+      />
     </div>
     <client-only>
       <FsLightbox
@@ -85,6 +88,14 @@ export default {
     images: {
       type: Array,
       default: () => [],
+    },
+    firstBtnText: {
+      type: String,
+      default: '',
+    },
+    secondBtnText: {
+      type: String,
+      default: '',
     },
   },
   data() {

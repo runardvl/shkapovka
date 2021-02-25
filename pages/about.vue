@@ -3,7 +3,11 @@
     <div class="container">
       <h1 class="about-page__heading">О базе</h1>
     </div>
-    <twoColSection :images="images" />
+    <twoColSection
+      :images="images"
+      :first-btn-text="firstBtnText"
+      :second-btn-text="secondBtnText"
+    />
   </div>
 </template>
 
@@ -18,6 +22,8 @@ export default {
   data() {
     return {
       images: ['about_image_1', 'about_image_2', 'about_image_3'],
+      firstBtnText: 'Подписаться на нас',
+      secondBtnText: 'Связаться с нами',
     }
   },
 }
