@@ -5,18 +5,20 @@
   "scripts": {
     "analyze": "cross-env NODE_ENV=production  nuxt build --analyze",
     "dev": "cross-env NODE_ENV=development NUXT_PORT=3000 nuxt",
+    "dev:host": "cross-env NODE_ENV=development NUXT_PORT=3000 nuxt --hostname '192.168.0.199'",
     "build": "cross-env NODE_ENV=production nuxt build",
     "buildandstart": "cross-env NODE_ENV=production nuxt build && cross-env NODE_ENV=production nuxt start",
     "start": "cross-env NODE_ENV=production nuxt start",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
-    "lint": "npm run lint:js && npm run lint:style"
+    "lint": "npm run lint:js && npm run lint:style",
+    "proxy": "lcp --proxyUrl https://api.vk.com"
   },
   "dependencies": {
     "@nuxt/content": "^1.9.0",
     "@nuxt/types": "^2.14.12",
-    "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/axios": "^5.13.1",
     "@nuxtjs/pwa": "^3.0.2",
     "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/svg": "^0.1.12",

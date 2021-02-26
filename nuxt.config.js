@@ -2,6 +2,7 @@
 const isDev = process.env.NODE_ENV !== 'production'
 
 export default {
+  target: 'static',
   mode: 'universal',
   ...(!isDev && {
     modern: 'client',
@@ -78,7 +79,10 @@ export default {
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
+  axios: {
+    credentials: false,
+    baseURL: 'https://shkapovka.ru/',
+  },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},

@@ -57,6 +57,7 @@ export default {
       'animalsImages1280',
     ]),
   },
+
   methods: {
     onClickHandler() {
       this.$modal.show('bookingModal')

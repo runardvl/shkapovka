@@ -27,7 +27,7 @@ export const actions = {
   async fetch({ commit }) {
     await this.$axios
       .$get(
-        `${process.env.VK_PROXY_URL}/proxy/method/photos.get?owner_id=${this.state.ownerId}&album_id=${this.state.areaAlbumId}&access_token=${process.env.VK_TOKEN}&v=5.52`
+        `${process.env.VK_API_URL}/method/photos.get?owner_id=${this.state.ownerId}&album_id=${this.state.areaAlbumId}&access_token=${process.env.VK_TOKEN}&v=5.52`
       )
       .then((response) => {
         commit('SET_VK_ALBUM_DATA', response.response)

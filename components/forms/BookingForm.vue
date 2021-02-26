@@ -1,7 +1,7 @@
 <template>
   <div class="booking-form">
     <ValidationObserver v-slot="{ invalid }">
-      <form class="booking-form__form" @submit.prevent="submitForm(userInfo)">
+      <form class="booking-form__form" @submit.prevent="submitForm">
         <!-- First Name -->
         <ValidationProvider
           v-slot="{ errors }"
@@ -16,6 +16,7 @@
             <input
               id="firstName"
               v-model="userInfo.name"
+              name="user_name"
               class="v-input booking-form__form-input"
               type="text"
               placeholder="Василий"
@@ -40,6 +41,7 @@
             <input
               id="phone"
               v-model="userInfo.phone"
+              name="user_phone"
               class="v-input booking-form__form-input"
               :class="classObject"
               type="tel"
@@ -85,7 +87,9 @@ export default {
     },
   },
   methods: {
-    submitForm() {},
+    async submitForm() {
+      await this.$axios.$post('telegram-sender.php')
+    },
   },
 }
 </script>
