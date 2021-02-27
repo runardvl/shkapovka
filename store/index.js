@@ -25,24 +25,20 @@ export const mutations = {
 
 export const actions = {
   async fetch({ commit }) {
-    await this.$axios
-      .$get(
-        `${process.env.VK_API_URL}/method/photos.get?owner_id=${this.state.ownerId}&album_id=${this.state.areaAlbumId}&access_token=${process.env.VK_TOKEN}&v=5.52`
-      )
-      .then((response) => {
-        commit('SET_VK_ALBUM_DATA', response.response)
-        commit('FILTER_VK_ALBUM_DATA_1280', response.response.items)
-      })
+    await this.$axios.$get(`/api/area`).then((response) => {
+      // // eslint-disable-next-line no-console
+      // console.log(response)
+      commit('SET_VK_ALBUM_DATA', response)
+      commit('FILTER_VK_ALBUM_DATA_1280', response.items)
+    })
   },
   async fetchAnimals({ commit }) {
-    await this.$axios
-      .$get(
-        `${process.env.VK_PROXY_URL}/proxy/method/photos.get?owner_id=${this.state.ownerId}&album_id=${this.state.animalsAlbumId}&access_token=${process.env.VK_TOKEN}&v=5.52`
-      )
-      .then((response) => {
-        commit('SET_ANIMALS_ALBUM_DATA', response.response)
-        commit('FILTER_ANIMALS_ALBUM_DATA_1280', response.response.items)
-      })
+    await this.$axios.$get(`/api/animals`).then((response) => {
+      // // eslint-disable-next-line no-console
+      // console.log(response.items)
+      commit('SET_ANIMALS_ALBUM_DATA', response)
+      commit('FILTER_ANIMALS_ALBUM_DATA_1280', response.items)
+    })
   },
 }
 

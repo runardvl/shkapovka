@@ -2,7 +2,10 @@
 const isDev = process.env.NODE_ENV !== 'production'
 
 export default {
-  target: 'static',
+  // target: 'static',
+  // server: {
+  //   host: 'https://shkapovka.ru', // default: localhost
+  // },
   mode: 'universal',
   ...(!isDev && {
     modern: 'client',
@@ -29,6 +32,8 @@ export default {
   router: {
     prefetchLinks: false,
   },
+
+  serverMiddleware: ['@/api/index', '@/api/rest', '@/api/rest-vk'],
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: ['@/assets/scss/main.scss'],
@@ -58,7 +63,20 @@ export default {
     '@nuxtjs/dotenv',
   ],
 
-  modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxt/content'],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/pwa',
+    '@nuxt/content',
+    [
+      'nuxt-mail',
+      {
+        smtp: {
+          host: 'http://localhost',
+          port: 1025,
+        },
+      },
+    ],
+  ],
 
   webfontloader: {
     events: false,
@@ -81,7 +99,7 @@ export default {
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
     credentials: false,
-    baseURL: 'https://shkapovka.ru/',
+    baseURL: 'http://localhost:3000',
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)

@@ -1,7 +1,13 @@
 <template>
   <div class="booking-form">
     <ValidationObserver v-slot="{ invalid }">
-      <form class="booking-form__form" @submit.prevent="submitForm">
+      <form
+        class="booking-form__form"
+        enctype="multipart/form-data"
+        @submit.prevent="submitForm"
+      >
+        <!--        action="/telegram-sender.php"-->
+        <!--        method="POST"-->
         <!-- First Name -->
         <ValidationProvider
           v-slot="{ errors }"
@@ -75,8 +81,8 @@ export default {
     confirmation: '',
     value: '',
     userInfo: {
-      name: '',
-      phone: '',
+      name: null,
+      phone: null,
     },
   }),
   computed: {
@@ -88,7 +94,32 @@ export default {
   },
   methods: {
     async submitForm() {
-      await this.$axios.$post('telegram-sender.php')
+      await this.$axios.$post('/sendtg', this.userInfo)
+      // await this.$axios.$post('telegram-sender.php')
+      // await this.$axios.$post('/mail/send', {
+      //   from: 'John Doe',
+      //   subject: 'Incredible',
+      //   text: 'This is an incredible test message',
+      //   to: 'johndoe@gmail.com',
+      // })
+
+      try {
+        await this.$axios.$post('/mail/send', {
+          from: 'John Doe',
+          subject: 'Incredible',
+          text: 'This is an incredible test message',
+          to: 'johndoe@gmail.com',
+        })
+      } catch (err) {
+        // eslint-disable-next-line no-console
+        console.log(err)
+      }
+      //   await this.$mail.send({
+      //     from: 'John Doe',
+      //     subject: 'Incredible',
+      //     text: 'This is an incredible test message',
+      //     to: 'johndoe@gmail.com',
+      //   })
     },
   },
 }
