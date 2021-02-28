@@ -27,14 +27,16 @@ export default {
       ]
     },
   },
-  // watch: {
-  //   async $route() {
-  //     if (this.$store.state.vkImages1280.length === 0) {
-  //       // eslint-disable-next-line no-console
-  //       await this.$store.dispatch('fetch')
-  //     }
-  //   },
-  // },
+  watch: {
+    async $route() {
+      if (this.$store.state.vkImages1280.length === 0) {
+        await this.$store.dispatch('fetch')
+      }
+      if (this.$store.state.animalsImages1280.length === 0) {
+        await this.$store.dispatch('fetchAnimals')
+      }
+    },
+  },
   head() {
     const canonical = `https://shkapovka.ru${this.$route.path
       .toLowerCase()
