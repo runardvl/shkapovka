@@ -33,7 +33,12 @@ export default {
     prefetchLinks: false,
   },
 
-  serverMiddleware: ['@/api/index', '@/api/rest', '@/api/rest-vk'],
+  serverMiddleware: [
+    '@/api/index',
+    '@/api/rest',
+    '@/api/rest-vk',
+    '@/api/rest-tg',
+  ],
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: ['@/assets/scss/main.scss'],
