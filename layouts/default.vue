@@ -1,17 +1,19 @@
 <template>
-  <div class="default container">
+  <div class="default">
     <Header />
     <Nuxt />
     <Footer />
+    <BookingModal />
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import BookingModal from '@/components/modals/BookingModal'
 
 export default {
-  components: { Header, Footer },
+  components: { Header, Footer, BookingModal },
   computed: {
     meta() {
       return [
@@ -25,7 +27,14 @@ export default {
       ]
     },
   },
-
+  // watch: {
+  //   async $route() {
+  //     if (this.$store.state.vkImages1280.length === 0) {
+  //       // eslint-disable-next-line no-console
+  //       await this.$store.dispatch('fetch')
+  //     }
+  //   },
+  // },
   head() {
     const canonical = `https://shkapovka.ru${this.$route.path
       .toLowerCase()
@@ -43,9 +52,9 @@ export default {
 
 <style lang="scss">
 .default {
-  background: $greyBg;
   display: grid;
   height: 100vh;
   grid-template-rows: auto 1fr auto;
+  position: relative;
 }
 </style>

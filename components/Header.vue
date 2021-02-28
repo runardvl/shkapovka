@@ -1,8 +1,10 @@
 <template>
-  <header class="header">
-    <ShkpvkLogo />
-    <Navigation class="nav" />
-  </header>
+  <div class="container">
+    <header class="header">
+      <ShkpvkLogo />
+      <Navigation class="nav" />
+    </header>
+  </div>
 </template>
 
 <script>
@@ -22,6 +24,7 @@ export default {
 .header {
   display: grid;
   padding-top: 24px;
+  justify-content: center;
   .nav {
     padding-top: 16px;
   }

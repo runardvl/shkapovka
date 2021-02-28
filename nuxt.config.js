@@ -1,6 +1,11 @@
+// require('dotenv').config()
 const isDev = process.env.NODE_ENV !== 'production'
 
 export default {
+  // target: 'static',
+  // server: {
+  //   host: 'https://shkapovka.ru', // default: localhost
+  // },
   mode: 'universal',
   ...(!isDev && {
     modern: 'client',
@@ -28,17 +33,26 @@ export default {
     prefetchLinks: false,
   },
 
+  serverMiddleware: ['@/api/index', '@/api/rest', '@/api/rest-vk'],
+
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: ['@/assets/scss/main.scss'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['@/plugins/vee-validate'],
+  plugins: [
+    '@/plugins/vee-validate',
+    '@/plugins/vue-screen',
+    '@/plugins/silent-box',
+    { src: '@/plugins/vue-js-modal.js', mode: 'client' },
+    { src: '@/plugins/vue-lazy-load.js' },
+    '@/plugins/fslightbox-vue',
+  ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
 
   loading: {
-    color: '#5024C6',
+    color: '#7D4A48',
     height: '5px',
   },
 
@@ -46,9 +60,23 @@ export default {
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
     '@nuxtjs/style-resources',
+    '@nuxtjs/dotenv',
   ],
 
-  modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxt/content'],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/pwa',
+    '@nuxt/content',
+    [
+      'nuxt-mail',
+      {
+        smtp: {
+          host: 'http://localhost',
+          port: 1025,
+        },
+      },
+    ],
+  ],
 
   webfontloader: {
     events: false,
@@ -69,7 +97,10 @@ export default {
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
+  axios: {
+    credentials: false,
+    baseURL: 'http://localhost:3000',
+  },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
@@ -128,7 +159,12 @@ export default {
         ignoreOrder: true,
       },
     }),
-    transpile: ['vee-validate', 'vue-lazy-hydration', 'intersection-observer'],
+    transpile: [
+      'vee-validate',
+      'vue-lazy-hydration',
+      'intersection-observer',
+      'vee-validate/dist/rules',
+    ],
     postcss: {
       plugins: {
         ...(!isDev && {

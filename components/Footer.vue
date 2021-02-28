@@ -1,7 +1,9 @@
 <template>
   <footer class="footer">
-    <ShkpvkLogo />
-    <Navigation class="nav" />
+    <div class="container">
+      <Navigation class="footer__nav" />
+      <ShkpvkLogo class="footer__logo" />
+    </div>
   </footer>
 </template>
 
@@ -21,9 +23,21 @@ export default {
 <style lang="scss">
 .footer {
   display: grid;
-  margin-bottom: 16px;
-  .nav {
-    padding-top: 16px;
+  grid-gap: 16px;
+  margin-top: 64px;
+  position: relative;
+  padding-bottom: 32px;
+  @media (width > 960px) {
+    margin-top: 128px;
+    padding-bottom: 48px;
+    grid-gap: 24px;
+  }
+  &__logo {
+    position: relative;
+    margin-top: 24px;
+  }
+  &__nav {
+    position: relative;
   }
 }
 </style>
