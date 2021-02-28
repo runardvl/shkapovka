@@ -6,8 +6,6 @@
         enctype="multipart/form-data"
         @submit.prevent="submitForm"
       >
-        <!--        action="/telegram-sender.php"-->
-        <!--        method="POST"-->
         <!-- First Name -->
         <ValidationProvider
           v-slot="{ errors }"
@@ -94,32 +92,12 @@ export default {
   },
   methods: {
     async submitForm() {
-      await this.$axios.$post('/sendtg', this.userInfo)
-      // await this.$axios.$post('telegram-sender.php')
-      // await this.$axios.$post('/mail/send', {
-      //   from: 'John Doe',
-      //   subject: 'Incredible',
-      //   text: 'This is an incredible test message',
-      //   to: 'johndoe@gmail.com',
-      // })
-
       try {
-        await this.$axios.$post('/mail/send', {
-          from: 'John Doe',
-          subject: 'Incredible',
-          text: 'This is an incredible test message',
-          to: 'johndoe@gmail.com',
-        })
+        await this.$axios.$post('/api/submit', this.userInfo)
       } catch (err) {
         // eslint-disable-next-line no-console
-        console.log(err)
+        console.log('Error is ' + err)
       }
-      //   await this.$mail.send({
-      //     from: 'John Doe',
-      //     subject: 'Incredible',
-      //     text: 'This is an incredible test message',
-      //     to: 'johndoe@gmail.com',
-      //   })
     },
   },
 }
