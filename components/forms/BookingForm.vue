@@ -11,6 +11,7 @@
           v-slot="{ errors }"
           class="input-wrapper"
           name="Имя"
+          mode="lazy"
           rules="required|alpha"
         >
           <label class="booking-form__form-label">
@@ -31,6 +32,7 @@
           v-slot="{ errors }"
           class="input-wrapper"
           name="Телефон"
+          mode="lazy"
           :rules="{
             required: true,
             regex:
@@ -91,16 +93,7 @@ export default {
   methods: {
     async submitForm() {
       try {
-        await this.$axios.$post('/api/submit', this.userInfo).then(() => {
-          // this.$modal.hide('bookingModal')
-          // this.showFormSendInfo = true
-          this.$store.dispatch('formSendInfo', true)
-          setTimeout(() => {
-            this.userInfo.name = this.userInfo.phone = ''
-            this.$emit('closePopup')
-            this.$store.dispatch('formSendInfo', false)
-          }, 5000)
-        })
+        await this.$axios.$post('/api/submit', this.userInfo)
       } catch (err) {
         // eslint-disable-next-line no-console
         console.log('Error is ' + err)
