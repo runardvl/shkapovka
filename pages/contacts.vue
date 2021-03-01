@@ -4,10 +4,12 @@
       <h1 class="contacts-page__heading">Контакты для обращения</h1>
     </div>
     <contactsSection />
-    <buttonsSection
-      :first-btn-text="firstBtnText"
-      :second-btn-text="secondBtnText"
-    />
+    <div class="contacts-page__buttons">
+      <buttonsSection
+        :first-btn-text="firstBtnText"
+        :second-btn-text="secondBtnText"
+      />
+    </div>
   </div>
 </template>
 
@@ -32,13 +34,15 @@ export default {
 
 <style lang="scss">
 .contacts-page {
+  padding-top: $spacer16;
+  padding-bottom: $spacer64;
+  @media (width > 960px) {
+    padding: $spacer64;
+    padding-bottom: $spacer64;
+  }
   &__heading {
-    margin-top: 48px;
     color: $darkText;
     @include heading1;
-    @media (width > 960px) {
-      margin-top: 64px;
-    }
   }
 }
 </style>

@@ -45,7 +45,7 @@
 <script>
 import heroSection from '@/components/sections/heroSection'
 import bulletsSection from '@/components/sections/bulletsSection'
-import rightSideTextSection from '@/components/sections/rightSideTextSection'
+import rightSideTextSection from '@/components/sections/leftSideTextSection'
 import imgCenteredSection from '@/components/sections/imgCenteredSection'
 import schemaSection from '@/components/sections/schemaSection'
 import socialSection from '@/components/sections/socialSection'

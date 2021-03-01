@@ -58,10 +58,10 @@ export default {
     @include heading2;
   }
   &__images {
-    margin-top: 16px;
+    margin-top: $spacer16;
     @include images-grid;
     @media (width > 960px) {
-      margin-top: 48px;
+      margin-top: $spacer32;
     }
   }
   &__img-wrapper {

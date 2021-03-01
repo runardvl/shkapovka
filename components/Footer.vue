@@ -24,11 +24,9 @@ export default {
 .footer {
   display: grid;
   grid-gap: 16px;
-  margin-top: 64px;
   position: relative;
   padding-bottom: 32px;
   @media (width > 960px) {
-    margin-top: 128px;
     padding-bottom: 48px;
     grid-gap: 24px;
   }

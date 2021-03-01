@@ -40,12 +40,11 @@ export default {
 .ic-section {
   display: block;
   background-color: $white;
-  //margin-top: 64px;
-  padding: 64px 16px 64px 16px;
+  padding: $spacer64 16px $spacer64 16px;
   position: static;
   @media (width > 960px) {
     position: relative;
-    padding: 128px;
+    padding: $spacer128;
   }
   &__image {
     padding-bottom: 0;

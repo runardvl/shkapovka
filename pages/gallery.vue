@@ -68,27 +68,37 @@ export default {
 
 <style lang="scss">
 .gallery-page {
-  padding-top: 48px;
+  padding-top: $spacer48;
   @media (width > 960px) {
-    padding-top: 64px;
+    padding-top: $spacer64;
   }
   &__heading {
     @include heading1;
   }
   &__territory {
-    margin-top: 16px;
+    margin-top: $spacer32;
+    margin-bottom: $spacer64;
     @media (width > 960px) {
-      margin-top: 64px;
-      margin-bottom: 48px;
+      margin-top: $spacer64;
+      margin-bottom: $spacer128;
     }
   }
   &__animals {
     background-color: $white;
-    padding-top: 128px;
-    padding-bottom: 128px;
+    padding-top: $spacer64;
+    padding-bottom: $spacer64;
+    @media (width > 960px) {
+      padding-top: $spacer128;
+      padding-bottom: $spacer128;
+    }
   }
   &__buttons {
-    padding-top: 128px;
+    padding-top: $spacer64;
+    padding-bottom: $spacer64;
+    @media (width > 960px) {
+      padding-top: $spacer64;
+      padding-bottom: $spacer64;
+    }
   }
 }
 </style>

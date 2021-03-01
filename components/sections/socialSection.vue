@@ -64,8 +64,13 @@ export default {
 <style lang="scss">
 .soc-section {
   position: relative;
+  margin-top: $spacer64;
+  margin-bottom: $spacer48;
+  @media (width > 960px) {
+    margin-top: $spacer128;
+    margin-bottom: $spacer64;
+  }
   &__title {
-    margin-top: 64px;
     position: relative;
     z-index: 1;
     @include heading2;
@@ -81,12 +86,12 @@ export default {
     position: relative;
     z-index: 1;
     display: grid;
-    margin-top: 32px;
+    margin-top: $spacer32;
     justify-content: center;
     grid-gap: 16px;
     @media (width > 960px) {
       grid-auto-flow: column;
-      margin-top: 64px;
+      margin-top: $spacer64;
     }
   }
   &__pattern {

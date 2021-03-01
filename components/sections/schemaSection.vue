@@ -21,11 +21,11 @@ export default {
 <style lang="scss">
 .s-section {
   background: $white;
-  padding: 64px 0;
+  padding: $spacer64 0;
   position: relative;
   z-index: 2;
   @media (width > 960px) {
-    padding: 128px 0;
+    padding: $spacer128 0;
   }
   &__title {
     max-width: 242px;
