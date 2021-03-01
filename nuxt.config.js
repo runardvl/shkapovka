@@ -51,6 +51,7 @@ export default {
     { src: '@/plugins/vue-js-modal.js', mode: 'client' },
     { src: '@/plugins/vue-lazy-load.js' },
     '@/plugins/fslightbox-vue',
+    '@plugins/v-mask.js',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -68,20 +69,7 @@ export default {
     '@nuxtjs/dotenv',
   ],
 
-  modules: [
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa',
-    '@nuxt/content',
-    [
-      'nuxt-mail',
-      {
-        smtp: {
-          host: 'http://localhost',
-          port: 1025,
-        },
-      },
-    ],
-  ],
+  modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxt/content'],
 
   webfontloader: {
     events: false,

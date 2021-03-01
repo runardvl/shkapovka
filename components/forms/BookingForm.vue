@@ -34,7 +34,8 @@
           :rules="{
             required: true,
             regex:
-              '^((8|\\+7)[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$',
+              // '^((8|\\+7)[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$',
+              '^(\\+7|7|8)?[\\s\\-]?\\(?[489][0-9]{2}\\)?[\\s\\-]?[0-9]{3}[\\s\\-]?[0-9]{2}[\\s\\-]?[0-9]{2}$',
           }"
         >
           <label class="booking-form__form-label">
@@ -43,6 +44,7 @@
             <input
               id="phone"
               v-model="userInfo.phone"
+              v-mask="'+7 (###) ###-##-##'"
               name="user_phone"
               class="v-input booking-form__form-input"
               :class="classObject"
