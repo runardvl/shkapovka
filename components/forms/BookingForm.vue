@@ -44,12 +44,12 @@
             <input
               id="phone"
               v-model="userInfo.phone"
-              v-mask="'+7 (###) ###-##-##'"
+              v-mask="'+# (###) ###-##-##'"
               name="user_phone"
               class="v-input booking-form__form-input"
               :class="classObject"
               type="tel"
-              placeholder="+7 (___) ___-__-__"
+              placeholder="+7 (000) 000-00-00"
             />
           </label>
         </ValidationProvider>
