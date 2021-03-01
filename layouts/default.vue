@@ -23,7 +23,11 @@ export default {
           content:
             'width=device-width, initial-scale=1, maximum-scale=1 shrink-to-fit=no',
         },
-        { hid: 'description', name: 'description', content: 'Главная' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Шкаповка. База отдыха г. Азнакаево',
+        },
       ]
     },
   },
