@@ -1,5 +1,10 @@
 <template>
   <div class="gallery-page">
+    <SocialHead
+      :title="pageMeta.title"
+      :description="pageMeta.description"
+      :image="pageMeta.image"
+    />
     <h1 class="gallery-page__heading container">Галерея</h1>
     <div class="gallery-page__territory">
       <VKGallery
@@ -28,10 +33,11 @@
 import { mapActions, mapState } from 'vuex'
 import VKGallery from '@/components/VKGallery'
 import buttonsSection from '@/components/sections/buttonsSection'
+import SocialHead from '@/components/SocialHead'
 
 export default {
   name: 'Gallery',
-  components: { VKGallery, buttonsSection },
+  components: { VKGallery, buttonsSection, SocialHead },
   async fetch({ store }) {
     if (store.getters.vkImages1280.length === 0) {
       await store.dispatch('fetch')
@@ -42,6 +48,11 @@ export default {
   },
   data() {
     return {
+      pageMeta: {
+        title: 'Галерея фотогрфий базы отдыха Шкаповка',
+        description:
+          'Галерея с фотографиями, снятые на базе отдыха Шкаповка. Фотограф Диана Робс',
+      },
       firsSectionHeading: 'Территория базы отдыха',
       secondSectionHeading: 'Животные на базе',
       firstBtnText: 'Подписаться на нас',
@@ -57,11 +68,21 @@ export default {
       'animalsImages1280',
     ]),
   },
-
   methods: {
     onClickHandler() {
       this.$modal.show('bookingModal')
     },
+  },
+  head: {
+    title: 'Галерея фотогрфий базы отдыха Шкаповка',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Галерея с фотографиями, снятые на базе отдыха Шкаповка. Фотограф Диана Робс',
+      },
+    ],
   },
 }
 </script>

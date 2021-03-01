@@ -15,7 +15,8 @@ export default {
     htmlAttrs: {
       lang: 'ru',
     },
-    title: 'Шкаповка - база отдыха',
+    title: 'Шкаповка - база отдыха г. Азнакаево',
+    titleTemplate: 'Шкаповка | %s',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -24,6 +25,70 @@ export default {
         name: 'description',
         content:
           'База для семейного и корпоративного отдыха в Азнакаевском районе',
+      },
+      // Twitter
+      // Test on: https://cards-dev.twitter.com/validator
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      { hid: 'twitter:site', name: 'twitter:site', content: '@nuxt_js' },
+      {
+        hid: 'twitter:url',
+        name: 'twitter:url',
+        content: 'https://shkapovka.ru',
+      },
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'Шкаповка - база отдыха г. Азнакаево',
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content:
+          'База для семейного и корпоративного отдыха в Азнакаевском районе',
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: 'https://nuxtjs.org/nuxt-card.png',
+      },
+      // Open Graph
+      // Test on: https://developers.facebook.com/tools/debug/
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Шкаповка' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://shkapovka.ru',
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Шкаповка - база отдыха г. Азнакаево',
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content:
+          'База для семейного и корпоративного отдыха в Азнакаевском районе',
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://nuxtjs.org/nuxt-card.png',
+      },
+      {
+        hid: 'og:image:secure_url',
+        property: 'og:image:secure_url',
+        content: 'https://nuxtjs.org/nuxt-card.png',
+      },
+      {
+        hid: 'og:image:alt',
+        property: 'og:image:alt',
+        content: 'Шкаповка - база отдыха г. Азнакаево',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],

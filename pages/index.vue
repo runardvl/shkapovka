@@ -1,5 +1,10 @@
 <template>
   <div class="main-page">
+    <SocialHead
+      :title="pageMeta.title"
+      :description="pageMeta.description"
+      :image="pageMeta.image"
+    />
     <!--First Section-->
     <heroSection />
     <div class="first-pattern-group">
@@ -63,6 +68,11 @@ export default {
   },
   data() {
     return {
+      pageMeta: {
+        title: 'Шкаповка. База отдыха в Азнакаевском районе',
+        description:
+          'База отдыха на территории Азнакаевского района. Можно у нас устроить корпоратив, семейное мероприятие, фотосессию и много разных активностей, которые только можно вообразить. Звоните, пишите',
+      },
       secondBlock: {
         title: 'Проведение мероприятий и регистрация браков',
         subtitle:
@@ -95,6 +105,17 @@ export default {
         ],
       },
     }
+  },
+  head: {
+    title: 'База отдыха в Азнакаевском районе',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'База отдыха на территории Азнакаевского района. Можно у нас устроить корпоратив, семейное мероприятие, фотосессию и много разных активностей, которые только можно вообразить. Звоните, пишите',
+      },
+    ],
   },
 }
 </script>

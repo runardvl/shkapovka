@@ -1,5 +1,10 @@
 <template>
   <div class="contacts-page">
+    <SocialHead
+      :title="pageMeta.title"
+      :description="pageMeta.description"
+      :image="pageMeta.image"
+    />
     <div class="container">
       <h1 class="contacts-page__heading">Контакты для обращения</h1>
     </div>
@@ -16,18 +21,36 @@
 <script>
 import contactsSection from '@/components/sections/contactsSection'
 import buttonsSection from '@/components/sections/buttonsSection'
+import SocialHead from '@/components/SocialHead'
 
 export default {
   name: 'Contacts',
   components: {
     contactsSection,
     buttonsSection,
+    SocialHead,
   },
   data() {
     return {
+      pageMeta: {
+        title: 'Контакты Шкаповки',
+        description:
+          'Координаты базы отдыха, ссылки на социальные сети, номер телефона, адрес базы отдыха Шкаповка',
+      },
       firstBtnText: 'Подписаться на нас',
       secondBtnText: 'Связаться с нами',
     }
+  },
+  head: {
+    title: 'Контакты Шкаповки',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Координаты базы отдыха, ссылки на социальные сети, номер телефона, адрес базы отдыха Шкаповка',
+      },
+    ],
   },
 }
 </script>
