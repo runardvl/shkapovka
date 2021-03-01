@@ -6,6 +6,7 @@ export const state = () => ({
   vkImages1280: [],
   animalsAlbumData: {},
   animalsImages1280: [],
+  showFormSendInfo: false,
 })
 
 export const mutations = {
@@ -20,6 +21,9 @@ export const mutations = {
   },
   FILTER_ANIMALS_ALBUM_DATA_1280(state, animalsAlbumData) {
     state.animalsImages1280 = animalsAlbumData.map((o) => o.photo_1280)
+  },
+  SHOW_FORM_SEND_INFO(state, showFormSendInfo) {
+    state.showFormSendInfo = showFormSendInfo
   },
 }
 
@@ -39,6 +43,9 @@ export const actions = {
       commit('SET_ANIMALS_ALBUM_DATA', response)
       commit('FILTER_ANIMALS_ALBUM_DATA_1280', response.items)
     })
+  },
+  async formSendInfo({ commit }, showFormInfo) {
+    await commit('SHOW_FORM_SEND_INFO', showFormInfo)
   },
 }
 

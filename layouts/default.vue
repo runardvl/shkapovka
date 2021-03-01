@@ -1,7 +1,7 @@
 <template>
   <div class="default">
     <Header />
-    <Nuxt />
+    <Nuxt keep-alive />
     <Footer />
     <BookingModal />
   </div>

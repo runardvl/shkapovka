@@ -104,8 +104,14 @@ export default {
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
     credentials: false,
-    baseURL: 'http://localhost:3000',
+    baseURL: 'https://shkapovka.ru',
   },
+  ...(!isDev && {
+    axios: {
+      credentials: false,
+      baseURL: '/',
+    },
+  }),
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},

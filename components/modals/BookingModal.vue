@@ -6,7 +6,7 @@
         :adaptive="true"
         :pivot-y="0.5"
         :max-width="496"
-        :max-height="600"
+        :max-height="530"
         :width="'95%'"
         height="auto"
         :reset="true"
@@ -20,24 +20,39 @@
         >
           <iconClose />
         </button>
-        <header class="booking-modal__header">
+        <header v-show="!showFormSendInfo" class="booking-modal__header">
           <h3 class="booking-modal__title">Оставьте заявку</h3>
           <p class="booking-modal__subtitle">
             Мы свяжемся с вами в рабочее время
           </p>
         </header>
-        <BookingForm button-text="Забронировать" />
+        <BookingForm
+          v-show="!showFormSendInfo"
+          button-text="Забронировать"
+          :show-form-send-info="showFormSendInfo"
+          @closePopup="modalClose"
+        />
+        <formSend v-if="showFormSendInfo" />
       </modal>
     </client-only>
   </div>
 </template>
 
 <script>
-import BookingForm from '@/components/forms/BookingForm'
+import { mapState } from 'vuex'
 import iconClose from '@/assets/svg/icon-close.svg?inline'
+import BookingForm from '@/components/forms/BookingForm'
+import formSend from '@/components/forms/formSend'
+
 export default {
   name: 'BookingModal',
-  components: { BookingForm, iconClose },
+  components: { BookingForm, iconClose, formSend },
+  data() {
+    return {}
+  },
+  computed: {
+    ...mapState(['showFormSendInfo']),
+  },
   watch: {
     $route() {
       this.$modal.hide('bookingModal')
