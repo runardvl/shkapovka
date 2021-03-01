@@ -37,7 +37,7 @@ export default {
   padding-top: $spacer16;
   padding-bottom: $spacer64;
   @media (width > 960px) {
-    padding: $spacer64;
+    padding-top: $spacer64;
     padding-bottom: $spacer64;
   }
   &__heading {
