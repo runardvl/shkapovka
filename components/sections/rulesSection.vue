@@ -46,44 +46,27 @@
         (заказчик) возмещает понесенные убытки базы.
       </p>
     </div>
-    <buttonsSection
-      :first-btn-text="firstBtnText"
-      :second-btn-text="secondBtnText"
-    />
   </section>
 </template>
 
 <script>
-import buttonsSection from '@/components/sections/buttonsSection'
-
 export default {
   name: 'RulesSection',
-  components: { buttonsSection },
-  props: {
-    firstBtnText: {
-      type: String,
-      default: '',
-    },
-    secondBtnText: {
-      type: String,
-      default: '',
-    },
-  },
 }
 </script>
 
 <style lang="scss">
 .rules-section {
   &__text {
-    padding-top: 32px;
-    padding-bottom: 32px;
     display: grid;
     grid-gap: 24px;
     max-width: 584px;
+    padding-top: $spacer32;
+    padding-bottom: $spacer64;
     @media (width > 960px) {
       grid-gap: 32px;
-      padding-top: 48px;
-      padding-bottom: 64px;
+      padding-top: $spacer64;
+      padding-bottom: $spacer64;
     }
   }
 }

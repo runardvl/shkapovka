@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: 'RightSideTextSection',
+  name: 'LeftSideTextSection',
   props: {
     title: {
       type: String,
@@ -62,12 +62,12 @@ export default {
   display: grid;
   justify-content: space-between;
   grid-auto-flow: row;
-  margin-top: 64px;
-  margin-bottom: 64px;
+  margin-top: $spacer64;
+  margin-bottom: $spacer64;
   @media (width > 960px) {
     grid-auto-flow: column;
-    margin-top: 128px;
-    margin-bottom: 128px;
+    margin-top: $spacer128;
+    margin-bottom: $spacer128;
   }
   &__offer {
     max-width: 407px;

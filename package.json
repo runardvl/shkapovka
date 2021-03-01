@@ -13,7 +13,7 @@
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
     "lint": "npm run lint:js && npm run lint:style",
-    "proxy": "lcp --proxyUrl https://api.vk.com"
+    "pm2:buildandstart": "pm2 start -i max --name shkpvk-site npm -- run buildandstart"
   },
   "dependencies": {
     "@nuxt/content": "^1.9.0",

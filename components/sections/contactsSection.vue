@@ -67,10 +67,11 @@ export default {
   &__text {
     display: grid;
     grid-gap: 24px;
-    padding-top: 32px;
-    padding-bottom: 64px;
+    padding-top: $spacer32;
+    padding-bottom: $spacer64;
     @media (width > 960px) {
-      padding-bottom: 128px;
+      padding-top: $spacer48;
+      padding-bottom: $spacer64;
       grid-gap: 32px;
     }
   }

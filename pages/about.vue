@@ -8,16 +8,24 @@
       :first-btn-text="firstBtnText"
       :second-btn-text="secondBtnText"
     />
+    <div class="about-page__buttons">
+      <buttonsSection
+        :first-btn-text="firstBtnText"
+        :second-btn-text="secondBtnText"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 import twoColSection from '@/components/sections/twoColSection'
+import buttonsSection from '@/components/sections/buttonsSection'
 
 export default {
   name: 'About',
   components: {
     twoColSection,
+    buttonsSection,
   },
   data() {
     return {
@@ -32,12 +40,16 @@ export default {
 <style lang="scss">
 .about-page {
   &__heading {
-    margin-top: 48px;
-    margin-bottom: 32px;
+    margin-top: $spacer16;
     @include heading1;
     @media (width > 960px) {
-      margin-top: 64px;
-      margin-bottom: 48px;
+      margin-top: $spacer64;
+    }
+  }
+  &__buttons {
+    margin-bottom: $spacer64;
+    @media (width > 960px) {
+      margin-bottom: $spacer64;
     }
   }
 }

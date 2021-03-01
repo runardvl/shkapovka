@@ -44,12 +44,10 @@ export default {
   position: relative;
   z-index: 1;
   display: grid;
-  margin-top: 32px;
   justify-content: center;
   grid-gap: 16px;
   @media (width > 960px) {
     grid-auto-flow: column;
-    margin-top: 64px;
   }
 }
 </style>

@@ -1,7 +1,9 @@
 <template>
-  <section class="container tc-section">
-    <h2 class="tc-section__heading">Чем у нас можно заняться</h2>
-    <div class="tc-section__wrapper">
+  <section class="tc-section">
+    <div class="tc-section__heading-wrap">
+      <h2 class="tc-section__heading container">Чем у нас можно заняться</h2>
+    </div>
+    <div class="tc-section__wrapper container">
       <!--Images block-->
       <div class="tc-section__images">
         <div
@@ -58,12 +60,6 @@
         </ul>
       </div>
     </div>
-    <div class="soc-section__buttons">
-      <buttonsSection
-        :first-btn-text="firstBtnText"
-        :second-btn-text="secondBtnText"
-      />
-    </div>
     <client-only>
       <FsLightbox
         :toggler="toggler"
@@ -80,10 +76,10 @@
 
 <script>
 import FsLightbox from 'fslightbox-vue'
-import buttonsSection from '@/components/sections/buttonsSection'
+
 export default {
   name: 'TwoColSection',
-  components: { FsLightbox, buttonsSection },
+  components: { FsLightbox },
   props: {
     images: {
       type: Array,
@@ -112,25 +108,31 @@ export default {
 
 <style lang="scss">
 .tc-section {
+  padding-top: $spacer32;
+  padding-bottom: $spacer64;
+  @media (width > 960px) {
+    padding-top: $spacer64;
+    padding-bottom: $spacer64;
+  }
   &__wrapper {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 24px;
-    padding-top: 16px;
-    padding-bottom: 64px;
     @media (width > 674px) {
       grid-gap: 32px;
       grid-auto-flow: column;
       grid-template-columns: max-content 1fr;
     }
-    @media (width > 960px) {
-      padding-top: 32px;
-      padding-bottom: 128px;
-    }
   }
   &__heading {
     color: $darkText;
     @include heading2;
+    &-wrap {
+      margin-bottom: $spacer16;
+      @media (width > 960px) {
+        margin-bottom: $spacer32;
+      }
+    }
   }
   &__images {
     display: grid;

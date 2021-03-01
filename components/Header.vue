@@ -23,7 +23,8 @@ export default {
 <style lang="scss">
 .header {
   display: grid;
-  padding-top: 24px;
+  padding-top: $spacer32;
+  padding-bottom: $spacer32;
   justify-content: center;
   .nav {
     padding-top: 16px;
