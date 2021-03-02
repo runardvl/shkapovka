@@ -2,18 +2,18 @@
   <div class="default">
     <Header />
     <Nuxt />
-    <Footer />
+    <FooterNext />
     <BookingModal />
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 import BookingModal from '@/components/modals/BookingModal'
+import FooterNext from '@/components/FooterNext'
 
 export default {
-  components: { Header, Footer, BookingModal },
+  components: { Header, BookingModal, FooterNext },
   computed: {
     meta() {
       return [

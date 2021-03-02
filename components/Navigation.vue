@@ -1,6 +1,6 @@
 <template>
   <nav class="nav">
-    <ul class="nav__list">
+    <ul :class="{ nav__list: !isFooterNav, 'footer-nav__list': isFooterNav }">
       <li v-for="item in menuItems" :key="item.link" class="nav__item">
         <nuxt-link
           class="nav__item-link"
@@ -16,6 +16,12 @@
 <script>
 export default {
   name: 'Navigation',
+  props: {
+    isFooterNav: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
       menuItems: [
@@ -54,5 +60,13 @@ export default {
       color: $brownButtonDefault;
     }
   }
+}
+.footer-nav__list {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-template-rows: repeat(2, max-content);
+  justify-content: start;
+  grid-row-gap: 8px;
+  grid-column-gap: 40px;
 }
 </style>

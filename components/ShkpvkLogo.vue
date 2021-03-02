@@ -14,7 +14,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .ShkpvkLogo {
   animation: 1s appear;
   margin: auto;
