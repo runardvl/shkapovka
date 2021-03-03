@@ -33,7 +33,7 @@ export default {
   data() {
     return {
       pageMeta: {
-        title: 'Контакты Шкаповки',
+        title: 'Контакты',
         description:
           'Координаты базы отдыха, ссылки на социальные сети, номер телефона, адрес базы отдыха Шкаповка',
       },
@@ -42,7 +42,7 @@ export default {
     }
   },
   head: {
-    title: 'Контакты Шкаповки',
+    title: 'Контакты',
     meta: [
       {
         hid: 'description',
