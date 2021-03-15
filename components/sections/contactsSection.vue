@@ -29,16 +29,18 @@
         <p class="contacts-section__subtitle">Мы в соц сетях</p>
         <div class="contacts-section__icon-link">
           <a
-            href="https://vk.com/shkapovka"
+            href="https://vk.com/shkapovka.ru"
+            target="_blank"
             class="contacts-section__title soc-link"
-            ><iconVk /> <strong>shkapovka</strong></a
+            ><iconVk /> <strong>shkapovka.ru</strong></a
           >
         </div>
         <div class="contacts-section__icon-link">
           <a
-            href="https://instagram.com/shkapovka"
+            href="https://instagram.com/shkapovka.ru"
+            target="_blank"
             class="contacts-section__title soc-link"
-            ><iconInstagram /> <strong>shkapovka</strong></a
+            ><iconInstagram /> <strong>shkapovka.ru</strong></a
           >
         </div>
       </div>

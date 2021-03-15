@@ -1,7 +1,7 @@
 <template>
   <div class="buttons-section container">
     <a
-      href="https://instagram.com/shkapovka_inst"
+      href="https://instagram.com/shkapovka.ru"
       class="btn--filled gallery-page__btn"
       target="_blank"
     >

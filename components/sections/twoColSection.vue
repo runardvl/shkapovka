@@ -10,7 +10,6 @@
           v-for="(img, index) in images"
           :key="index"
           class="tc-section__img-wrapper"
-          @click="openLightboxOnSlide(index + 1)"
         >
           <img
             class="tc-section__img"
@@ -21,23 +20,30 @@
       </div>
       <!--Text block-->
       <div class="tc-section__text">
+        <span class="tc-section__list-heading"
+          ><strong>В любое время года</strong></span
+        >
         <ul class="tc-section__list">
           <li class="tc-section__list-item">
-            Проведение выездной свадебной регистрации
+            Проведение выездной свадебной регистрации молодожёнов
           </li>
-        </ul>
-        <ul class="tc-section__list">
-          <li class="tc-section__list-item">Прожарка шашлыка на мангале</li>
-          <li class="tc-section__list-item">Готовка в котле на огне</li>
         </ul>
         <ul class="tc-section__list">
           <li class="tc-section__list-item">
             Аренда помещения на 30 и 60 посадочных мест
           </li>
           <li class="tc-section__list-item">
-            Аренда бани на 40 человек, в парилке 10 человек
+            Фотосессии с животными (козлики, барашки, кролики, кошки, лошади,
+            ослики и собаки)
           </li>
         </ul>
+        <ul class="tc-section__list">
+          <li class="tc-section__list-item">Катание на лошадях и осликах</li>
+          <li class="tc-section__list-item">
+            Контактный сельскохозяйственный зоопарк
+          </li>
+        </ul>
+        <span class="tc-section__list-heading"><strong>Летом</strong></span>
         <ul class="tc-section__list">
           <li class="tc-section__list-item">Аренда тюбингов</li>
           <li class="tc-section__list-item">Аренда салазок/ледянок/лыж</li>
@@ -46,40 +52,42 @@
           </li>
         </ul>
         <ul class="tc-section__list">
-          <li class="tc-section__list-item">Экскурсия и общение с животными</li>
-          <li class="tc-section__list-item">Катание на лошади, пони</li>
+          <li class="tc-section__list-item">
+            Жилые дома с мангальной зоной в летний период*
+          </li>
+          <li class="tc-section__list-item">
+            Аренда бани на 40 человек, в парилке 10 человек в летний период*
+          </li>
+          <li class="tc-section__list-item">
+            Аренда катамаранов и лодок для прогулок по искусственному водоёму
+          </li>
+        </ul>
+        <span class="tc-section__list-heading"><strong>Зимой</strong></span>
+        <ul class="tc-section__list">
+          <li class="tc-section__list-item">
+            Аренда тюбингов, салазок, ледянок, лыж
+          </li>
           <li class="tc-section__list-item">
             Катание на льду со своими коньками
           </li>
         </ul>
+        <span class="tc-section__list-heading"
+          ><strong>При наличии</strong></span
+        >
         <ul class="tc-section__list">
           <li class="tc-section__list-item">Покупка барана/коз живым весом</li>
           <li class="tc-section__list-item">
-            Покупка мяса (баранье, козье, конина)
+            Покупка мяса (баранина, конина, козы)
           </li>
         </ul>
       </div>
     </div>
-    <client-only>
-      <FsLightbox
-        :toggler="toggler"
-        :sources="[
-          '~assets/img/about/about_image_1.jpg',
-          '~assets/img/about/about_image_2.jpg',
-          '~assets/img/about/about_image_3.jpg',
-        ]"
-        :slide="slide"
-      />
-    </client-only>
   </section>
 </template>
 
 <script>
-import FsLightbox from 'fslightbox-vue'
-
 export default {
   name: 'TwoColSection',
-  components: { FsLightbox },
   props: {
     images: {
       type: Array,
@@ -155,12 +163,16 @@ export default {
       width: 232px;
       height: 160px;
     }
+    @media (width > 960px) {
+      width: 320px;
+      height: auto;
+    }
   }
   &__text {
     display: grid;
-    grid-gap: 24px;
+    grid-gap: 8px;
     @media (width > 960px) {
-      grid-gap: 32px;
+      grid-gap: 8px;
     }
   }
   &__list {
@@ -169,6 +181,12 @@ export default {
     &-item {
       color: $darkText;
       @include body1;
+    }
+  }
+  &__list-heading {
+    margin-top: 24px;
+    &:first-child {
+      margin-top: 0;
     }
   }
 }

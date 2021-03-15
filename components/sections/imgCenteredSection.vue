@@ -11,8 +11,8 @@
       <div class="ic-section__offer">
         <h2 class="ic-section__title">Фотосессии с животными</h2>
         <p class="ic-section__subtitle">
-          У нас такие-то, такие-то и такие-то животные, с которыми можно
-          познакомиться
+          На базе отдыха козлики, барашки, кролики, кошки, лошади, ослики и
+          собаки, которые поучаствуют в вашей фотосессии
         </p>
         <button
           class="btn--filled ic-section__btn"
@@ -70,7 +70,7 @@ export default {
   }
   &__subtitle {
     margin-top: 40px;
-    max-width: 288px;
+    max-width: 420px;
     @media (width > 960px) {
       margin-top: 16px;
     }

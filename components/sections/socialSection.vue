@@ -8,11 +8,12 @@
           :key="index"
           class="soc-section__img-wrapper"
         >
-          <img
-            class="soc-section__img"
-            :src="require(`~/assets/img/${img}.jpg`)"
-            alt="Фотография территории базы отдыха Шкаповка в Азнакаевском районе"
-          />
+          <a class="soc-section__img-link" :href="imagesLink" target="_blank"
+            ><img
+              class="soc-section__img"
+              :src="require(`~/assets/img/${img}.jpg`)"
+              alt="Фотография территории базы отдыха Шкаповка в Азнакаевском районе"
+          /></a>
         </div>
       </div>
       <div class="soc-section__buttons">
@@ -52,6 +53,11 @@ export default {
       type: String,
       default: '',
     },
+  },
+  data() {
+    return {
+      imagesLink: 'https://instagram.com/shkapovka.ru',
+    }
   },
   methods: {
     onClickHandler() {
