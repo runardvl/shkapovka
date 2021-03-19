@@ -28,20 +28,6 @@ export const mutations = {
 }
 
 export const actions = {
-  async nuxtServerInit({ commit }) {
-    await this.$axios.$get(`/api/area`).then((response) => {
-      // // eslint-disable-next-line no-console
-      // console.log(response)
-      commit('SET_VK_ALBUM_DATA', response)
-      commit('FILTER_VK_ALBUM_DATA_1280', response.items)
-    })
-    await this.$axios.$get(`/api/animals`).then((response) => {
-      // // eslint-disable-next-line no-console
-      // console.log(response.items)
-      commit('SET_ANIMALS_ALBUM_DATA', response)
-      commit('FILTER_ANIMALS_ALBUM_DATA_1280', response.items)
-    })
-  },
   async fetch({ commit }) {
     await this.$axios.$get(`/api/area`).then((response) => {
       // // eslint-disable-next-line no-console
